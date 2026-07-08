@@ -1,25 +1,25 @@
 - step: 
-        name: repo_2_step
-        environment: ec2-instance
-        image: python 
-        command: 
-            - echo "yo from repo_2"
-            - echo {parameters}
-        parameters: 
-            - name: main_param 
-            type: string 
-            defualt: "-2"
+    name: repo_2_step
+    environment: ec2-instance
+    image: python 
+    command: 
+      - echo "yo from repo_2"
+      - echo {parameters}
+    parameters: 
+      - name: main_param 
+        type: string 
+        defualt: "-2"
 
 - pipeline: 
-        name: cross_pipe
-    
-        nodes: 
-            - name: node_one 
-                type: execution 
-                step: repo_1_step
-                commit: 7f13795ff470c9f05df0d0505ea93d8bc010d001
-            - name: node_two
-                type: execution 
-                step: repo_2_step
-        edges: 
-            - [node_one.metadata.mdata, node_two.parameter.main_param]
+    name: cross_pipe
+
+    nodes: 
+      - name: node_one 
+        type: execution 
+        step: repo_1_step
+        commit: 7f13795ff470c9f05df0d0505ea93d8bc010d001
+      - name: node_two
+        type: execution 
+        step: repo_2_step
+    edges: 
+      - [node_one.metadata.mdata, node_two.parameter.main_param]
