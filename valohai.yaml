@@ -8,7 +8,7 @@
     parameters: 
       - name: main_param 
         type: string 
-        defualt: "-2"
+        default: "-2"
 
 - pipeline: 
     name: cross_pipe
