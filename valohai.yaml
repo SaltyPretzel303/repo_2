@@ -1,0 +1,5 @@
+- step: 
+    name: repo_2_step
+    environment: ec2-instance
+    image: python 
+    command: echo "yo from repo_2"
