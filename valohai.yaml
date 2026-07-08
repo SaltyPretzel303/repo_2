@@ -7,8 +7,8 @@
             - echo {parameters}
         parameters: 
             - name: main_param 
-                type: string 
-                defualt: "-2"
+            type: string 
+            defualt: "-2"
 
 - pipeline: 
         name: cross_pipe
